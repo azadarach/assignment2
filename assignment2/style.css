@@ -1,33 +1,41 @@
 
-/* I created a margin around my box of 3px just so the box doesn't touch the edge of the screen. I also created a borderbox. */
+/* I created a margin around my box of 3px just so the box doesn't touch the edge of the screen. */
 *{
     margin: 3px;
-    box-sizing: content-box;
-}
+} 
 
 /* This is creating colours that I can refer back to with a var() tag. I have created 4 greyscale colours and a simple border for my design. */
 :root{
-    --colour-one: rgb(0,0,0);
-    --colour-two: rgb(80,80,80);
+
+    /* Chosen colours and border for my grid */
     --colour-three: rgb(160,160,160);
-    --colour-four: rgb(240,240,240);
+    --colour-five: white;
+    --colour-six: rgb(244, 111, 215);
     --border-one: solid 1mm black;
 }
 
 /* Established a 7x5 grid with a white background. I adjusted the width so the grids would be squares. There is no margin on the grids, but there is a 3px gap between them. */
 #bg-grid-container{
-    background-color: white;
-    position: sticky;
-    width: 492px;
-    height: 690px;
-    /* height: 100vh;
-    min-height: 690px; */ /* commenting this out for right now so I can figure it out later */
-    margin: auto;
-    margin-bottom: 1mm;
+    
+    /* Background colour */
+    background-color: var(--colour-five); /* I have tried a lot of different things with my grid container to get it exactly how I want it so some code is commented out. */
+    
+    /* Grid setup */
     display: grid;
-    gap: 3px 3px; 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-gap: 3px 3px;
+    
+    /* Grid size */
+    width: 37vw;
+    height: 90vh;
+    min-width: 460px;
+    min-height: 670px;
+    
+    /* Margins */
+    margin: auto;
+    margin-bottom: 5mm;
+    margin-top: 6mm;
 }
 
 /* I have set up this grid-item so that all my 'items' in my html file that say class="grid-item" will have '--border-one's attributes (a solid, 1mm thick black border) */
